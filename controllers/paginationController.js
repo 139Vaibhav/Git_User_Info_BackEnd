@@ -5,7 +5,7 @@ const https = require("https");
 exports.getRepoPage = catchAsyncError(async (req, res, next) => {
     let data = '';
     console.log("the query is ", req.query.page);
-    const url = `https://api.github.com/users/${req.params.username}/repos?page=${req.query.page}&per_page=10`;
+    const url = `https://api.github.com/users/${req.params.username}/repos?page=${req.query.page}&per_page=9`;
     console.log("url is ", url);
     var options = {
         // host: 'api.github.com',

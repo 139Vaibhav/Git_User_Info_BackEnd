@@ -12,14 +12,14 @@ The Backend is written in NodeJS and ExpressJS
 -> GetRepoPage - This API will return list of all the repositories of the user with 10 repos per page.
 
 ## API Calls
--> GetUserName - http://localhost:4000/api/v1/userInfo/139vaibhav
+-> GetUserName - https://kind-pink-giraffe-boot.cyclic.app/api/v1/userInfo/139vaibhav
 
--> GetAllRepo - http://localhost:4000/api/v1/repoInfo/139vaibhav
+-> GetAllRepo - https://kind-pink-giraffe-boot.cyclic.app/api/v1/repoInfo/139vaibhav
 
--> GetRepoPage - http://localhost:4000/api/v1/repoPageInfo/139vaibhav?page=1
+-> GetRepoPage - https://kind-pink-giraffe-boot.cyclic.app/api/v1/repoPageInfo/139vaibhav?page=1
 
 ## Hosted Link
-
+https://kind-pink-giraffe-boot.cyclic.app/
 
 ## Development server
 Run `npm run dev` for a dev server. Navigate to `http://localhost:4000/`.

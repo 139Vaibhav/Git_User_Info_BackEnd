@@ -3,6 +3,7 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const https = require("https");
 
 exports.getAllRepo = catchAsyncError(async (req, res, next) => {
+    let finaldata = [];
     let data = '';
     var options = {
         host: 'api.github.com',
@@ -20,6 +21,7 @@ exports.getAllRepo = catchAsyncError(async (req, res, next) => {
 
             resp.on('end', () => {
                 resolve(data)
+                finaldata.push(JSON.parse(data));
             })
 
         });
@@ -29,7 +31,7 @@ exports.getAllRepo = catchAsyncError(async (req, res, next) => {
         }
         res.status(200).json({
             success: true,
-            data
+            finaldata
         });
     })
     // res.status(200).json({

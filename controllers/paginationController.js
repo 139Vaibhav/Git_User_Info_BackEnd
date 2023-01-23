@@ -3,6 +3,7 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const https = require("https");
 
 exports.getRepoPage = catchAsyncError(async (req, res, next) => {
+    let finaldata = [];
     let data = '';
     console.log("the query is ", req.query.page);
     const url = `https://api.github.com/users/${req.params.username}/repos?page=${req.query.page}&per_page=9`;
@@ -24,6 +25,7 @@ exports.getRepoPage = catchAsyncError(async (req, res, next) => {
 
             resp.on('end', () => {
                 resolve(data)
+                finaldata.push(JSON.parse(data));
             })
 
         });
@@ -33,7 +35,7 @@ exports.getRepoPage = catchAsyncError(async (req, res, next) => {
         }
         res.status(200).json({
             success: true,
-            data
+            finaldata
         });
     })
     // res.status(200).json({

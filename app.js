@@ -10,7 +10,7 @@ const userInfo = require("./routes/userRoute");
 
 app.use("/api/v1", userInfo)
 app.use(cors({
-    origin: "https://bejewelled-empanada-63b3c2.netlify.app"
+    origin: "*",
 }))
 
 module.exports = app
